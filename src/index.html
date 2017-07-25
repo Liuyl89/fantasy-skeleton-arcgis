@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Fantasy Gis</title>
+    <meta name="description" content="Fantasy Gis Project from GisUni">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="manifest" href="assets/site.webmanifest">
+    <link rel="apple-touch-icon" href="assets/icon.png">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="icon" href="assets/favicon.ico"/>
+    <% for(var i=0; i<htmlWebpackPlugin.options.links.length ; i++) {%>
+    <% var link=htmlWebpackPlugin.options.links[i]%>
+    <% if(!link.locale) {%>
+    <link rel="<%= link.rel %>"
+        href="<%= htmlWebpackPlugin.options.cdn %><%= link.path %><%= link.version %>/<%= link.file %>"/>
+    <% } else{%>
+    <link rel="<%= link.rel %>"
+        href="<%= link.path %><%= link.file %>"/>
+    <% } %>
+    <% } %>
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+<!-- Add your site or application content here -->
+<% for(var i=0; i<htmlWebpackPlugin.options.scripts.length ; i++) {%>
+    <% var script=htmlWebpackPlugin.options.scripts[i]%>
+    <script
+        src="<%= htmlWebpackPlugin.options.cdn %><%= script.path %><%= script.version %>/<%= script.file %>"></script>
+    <% } %>
+    
+    <script src="vendor.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
