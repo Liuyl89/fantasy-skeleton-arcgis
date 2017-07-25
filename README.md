@@ -1,22 +1,18 @@
-
-[![npm][npm]][npm-url]
-[![node][node]][node-url]
-[![deps][deps]][deps-url]
-
 <div align="center">
-  <h1>Fantasy Skeleton Bootstrap</h1>
-  <p>网站开发骨架，集成Webpack、Bootstrap、Scss</p>
-  <p>Auth by Liuyl from GisUni</p>
+  <h1 align="center">Fantasy Skeleton Bootstrap</h1>
+  <p align="center">网站开发骨架，集成Webpack、Bootstrap、Scss</p>
+  <p align="center">Auth by Liuyl from GisUni</p>
 </div>
 
 <h2 align="center">Install</h2>
 
-```bash
 下载所有文件到本地目录
 
+执行
+
+```bash
 #安装依赖
 npm install
-
 ```
 
 <h2 align="center">Usage</h2>
@@ -60,6 +56,7 @@ npm run build-dev
 ```
 
 将服务器虚拟目录指向dist目录
+
 src目录中代码文件改动时将自动重新编译，刷新页面即可生效
 
 
@@ -72,6 +69,7 @@ npm run webpack-dev-server
 ```
 
 访问 http://localhost:8070/fantasy-skeleton-bootstrap/index.html 查看页面
+
 src目录中代码文件改动时将自动重新编译，页面更改将自动刷新生效
 
 ### 开始开发
@@ -80,6 +78,7 @@ src目录中代码文件改动时将自动重新编译，页面更改将自动�
 修改src/app.js文件编写JS脚本
 
 <h2 align="center">Feature</h2>
+<div align="center">
 
 |特性|描述|
 |:--------|:---------|
@@ -92,3 +91,5 @@ src目录中代码文件改动时将自动重新编译，页面更改将自动�
 | lodash | 集成了lodash |
 | Bootstrap | 集成了Bootstrap3 |
 | sass | 支持使用sass定义样式|
+
+</div>
