@@ -31,9 +31,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build",
-    "build-dev": "gulp build-dev",
-    "webpack-dev-server": "gulp webpack-dev-server",
+    "build": "gulp build:fantasy-skeleton-bootstrap",
+    "build-dev": "gulp build-dev:fantasy-skeleton-bootstrap",
+    "webpack-dev-server": "gulp webpack-dev-server:fantasy-skeleton-bootstrap",
     "clean": "gulp clean:dist"
   },
   "repository": {
