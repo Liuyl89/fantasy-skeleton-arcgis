@@ -1,6 +1,6 @@
 <div align="center">
-  <h1 align="center">Fantasy Skeleton Bootstrap</h1>
-  <p align="center">网站开发骨架，集成Webpack、Bootstrap、Scss</p>
+  <h1 align="center">Fantasy Skeleton React</h1>
+  <p align="center">网站开发骨架，集成Webpack、Bootstrap、React、Scss</p>
   <p align="center">Auth by Liuyl from GisUni</p>
 </div>
 
@@ -90,6 +90,8 @@ src目录中代码文件改动时将自动重新编译，页面更改将自动�
 | jQuery | 集成了jquery 3.2.1 |
 | lodash | 集成了lodash |
 | Bootstrap | 集成了Bootstrap3 |
+| React | 集成了React |
+| react-router | 集成了react-router |
 | sass | 支持使用sass定义样式|
 
 </div>
