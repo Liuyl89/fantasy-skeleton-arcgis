@@ -95,10 +95,6 @@ module.exports = {
                 path: 'react-router-dom/',
                 version: '4.1.2'
             }, {
-                file: 'history.js',
-                path: 'history/',
-                version: '4.6.3'
-            }, {
                 file: 'js/bootstrap.min.js',
                 path: 'bootstrap/',
                 version: '3.3.7'
@@ -132,7 +128,6 @@ module.exports = {
         'react': 'React',
         'react-dom': 'ReactDOM',
         'react-router-dom': 'ReactRouterDOM',
-        'history': 'History',
         'prop-types':'PropTypes',
     }]
 }
