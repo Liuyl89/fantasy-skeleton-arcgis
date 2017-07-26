@@ -76,7 +76,7 @@ gulp.task('webpack:build-dev' + name, function (callback) {
     })
 })
 
-gulp.task('webpack-dev-server' + name, ['clean' + name, 'copy' + name], function () {
+gulp.task('webpack-dev-server' + name, ['copy' + name], function () {
     // modify some webpack config options
     let hostName = 'localhost',
         host = `http://${hostName}:`,
@@ -90,7 +90,11 @@ gulp.task('webpack-dev-server' + name, ['clean' + name, 'copy' + name], function
     myConfig.plugins = myConfig.plugins.concat(
         new webpack.HotModuleReplacementPlugin()
     )
-
+    myConfig.module.rules[0].query.env = {
+        'development': {
+            'presets': ['react-hmre']
+        }
+    }
     // Start a webpack-dev-server
     new WebpackDevServer(webpack(myConfig), {
         publicPath: myConfig.output.publicPath,
@@ -108,7 +112,10 @@ gulp.task('webpack-dev-server' + name, ['clean' + name, 'copy' + name], function
             [myConfig.output.publicPath + '404.html']: {
                 target: host + staticPort,
             }
-        }
+        },
+        historyApiFallback: {
+            index: myConfig.output.publicPath,
+        },
     }).listen(port, 'localhost', function (err) {
         if (err) throw new gutil.PluginError('webpack-dev-server', err)
         gutil.log('[webpack-dev-server]',

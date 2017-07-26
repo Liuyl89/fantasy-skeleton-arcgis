@@ -20,6 +20,7 @@ module.exports = {
             query: {
                 presets: [
                     'es2015',
+                    'react',
                     'stage-1'
                 ],
                 plugins: [
@@ -57,28 +58,12 @@ module.exports = {
         }]
     },
     plugins: [
-        // new CopyWebpackPlugin([{
-        //     from: __dirname + '\\src\\404.html',
-        //     to: __dirname + '\\dist'
-        // }, {
-        //     from: __dirname + '\\src\\site.webmanifest',
-        //     to: __dirname + '\\dist'
-        // }, {
-        //     from: __dirname + '\\src\\css\\main.css',
-        //     to: __dirname + '\\dist'
-        // }, {
-        //     from: __dirname + '\\src\\assets\\img\\favicon.ico',
-        //     to: __dirname + '\\dist'
-        // }, {
-        //     from: __dirname + '\\src\\assets\\img\\icon.png',
-        //     to: __dirname + '\\dist'
-        // }]),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             hash: true,
             filename: 'index.html',
             inject: false,
-            title: 'Fantasy Map',
+            title: 'Fantasy Skeleton React',
             cdn: 'https://cdn.bootcss.com/',
             scripts: [{
                 file: 'modernizr.min.js',
@@ -92,6 +77,27 @@ module.exports = {
                 file: 'lodash.min.js',
                 path: 'lodash.js/',
                 version: '4.17.4'
+            }, {
+                file: 'prop-types.min.js',
+                path: 'https://unpkg.com/prop-types/',
+                version: '15.5.10',
+                locale: true,
+            }, {
+                file: 'react.js',
+                path: 'react/',
+                version: '15.6.1'
+            }, {
+                file: 'react-dom.js',
+                path: 'react/',
+                version: '15.6.1'
+            }, {
+                file: 'react-router-dom.js',
+                path: 'react-router-dom/',
+                version: '4.1.2'
+            }, {
+                file: 'history.js',
+                path: 'history/',
+                version: '4.6.3'
             }, {
                 file: 'js/bootstrap.min.js',
                 path: 'bootstrap/',
@@ -123,5 +129,10 @@ module.exports = {
     externals: [{
         'jquery': 'jQuery',
         'lodash': '_',
+        'react': 'React',
+        'react-dom': 'ReactDOM',
+        'react-router-dom': 'ReactRouterDOM',
+        'history': 'History',
+        'prop-types':'PropTypes',
     }]
 }

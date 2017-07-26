@@ -1,6 +1,6 @@
 <div align="center">
   <h1 align="center">Fantasy Skeleton React</h1>
-  <p align="center">网站开发骨架，集成Webpack、Bootstrap、React、Scss</p>
+  <p align="center">网站开发骨架，集成Webpack、Bootstrap、React、Sass</p>
   <p align="center">Auth by Liuyl from GisUni</p>
 </div>
 
@@ -26,7 +26,7 @@ npm install
 output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/fantasy-skeleton-bootstrap/'
+    publicPath: '/fantasy-skeleton-react/'
 },
 ```
 
@@ -38,6 +38,19 @@ npm run build
 
 将dist目录中生成的文件部署到服务器
 
+为了使带有路由信息的访问链接能够正确被解析，需要对服务器做一些额外配置
+
+以nginx为例:
+
+```bash
+location ^~/fantasy-skeleton-react/{
+	try_files $uri $uri/ /fantasy-skeleton-react/index.html;
+}
+```
+
+通过如下url对页面进行访问：
+
+http://yourHostname/fantasy-skeleton-react/
 
 ### 不使用webpack-dev-server进行开发
 ```js
@@ -45,7 +58,7 @@ npm run build
 output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/fantasy-skeleton-bootstrap/'
+    publicPath: '/fantasy-skeleton-react/'
 },
 ```
 
@@ -56,6 +69,21 @@ npm run build-dev
 ```
 
 将服务器虚拟目录指向dist目录
+
+为了使带有路由信息的访问链接能够正确被解析，需要对服务器虚拟路径做一些额外配置
+
+以nginx为例:
+
+```bash
+location ^~/fantasy-skeleton-react/{
+	alias yourPhysicalPath\\fantasy-skeleton-react\\dist\\;
+	try_files $uri $uri/ /fantasy-skeleton-react/index.html;
+}
+```
+
+通过如下url对页面进行访问：
+
+http://yourHostname/fantasy-skeleton-react/
 
 src目录中代码文件改动时将自动重新编译，刷新页面即可生效
 
@@ -68,7 +96,7 @@ src目录中代码文件改动时将自动重新编译，刷新页面即可生�
 npm run webpack-dev-server
 ```
 
-访问 http://localhost:8070/fantasy-skeleton-bootstrap/index.html 查看页面
+访问 http://localhost:8070/fantasy-skeleton-react/ 查看页面
 
 src目录中代码文件改动时将自动重新编译，页面更改将自动刷新生效
 
@@ -91,7 +119,7 @@ src目录中代码文件改动时将自动重新编译，页面更改将自动�
 | lodash | 集成了lodash |
 | Bootstrap | 集成了Bootstrap3 |
 | React | 集成了React |
-| react-router | 集成了react-router |
+| react-router | 集成了react-router 4.1.2|
 | sass | 支持使用sass定义样式|
 
 </div>

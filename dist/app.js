@@ -57,30 +57,27 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/fantasy-skeleton-bootstrap/";
+/******/ 	__webpack_require__.p = "/fantasy-skeleton-react/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 0 */
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__(4);
-
+module.exports = React;
 
 /***/ }),
+/* 1 */,
+/* 2 */,
+/* 3 */,
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+module.exports = __webpack_require__(5);
 
-
-__webpack_require__(5);
 
 /***/ }),
 /* 5 */
@@ -89,9 +86,27 @@ __webpack_require__(5);
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {
 
-__webpack_require__(7);
+var _react = __webpack_require__(0);
 
-$('<div class="container app">' + '<div class="jumbotron">' + '<h1>欢迎使用</h1>' + '<p>fantasy-skeleton-bootstrap 是一个开发骨架，集成了webpack和bootstrap，祝你好运~</p>' + '<p><a class="btn btn-primary btn-lg" target="_blank" href="https://github.com/Liuyl89/fantasy-skeleton-bootstrap" role="button">前往Github</a></p>' + '</div></div>').prependTo($('body'));
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(7);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _app = __webpack_require__(8);
+
+var _app2 = _interopRequireDefault(_app);
+
+__webpack_require__(10);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var $mountNode = $('<div class="container app"></div>').appendTo(document.body);
+var render = function render(NewApp) {
+  return _reactDom2.default.render(_react2.default.createElement(NewApp, null), $mountNode[0]);
+};
+render(_app2.default);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
@@ -102,12 +117,158 @@ module.exports = jQuery;
 
 /***/ }),
 /* 7 */
+/***/ (function(module, exports) {
+
+module.exports = ReactDOM;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(9);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Home = function Home() {
+    return _react2.default.createElement(
+        'div',
+        { className: 'jumbotron' },
+        _react2.default.createElement(
+            'h1',
+            null,
+            '\u6B22\u8FCE\u4F7F\u7528'
+        ),
+        _react2.default.createElement(
+            'p',
+            null,
+            'fantasy-skeleton-react \u662F\u4E00\u4E2A\u5F00\u53D1\u9AA8\u67B6\uFF0C\u96C6\u6210\u4E86webpack\u3001bootstrap\u548CReact\uFF0C\u795D\u4F60\u597D\u8FD0~'
+        ),
+        _react2.default.createElement(
+            'p',
+            null,
+            _react2.default.createElement(
+                'a',
+                { className: 'btn btn-primary btn-lg', target: '_blank',
+                    href: 'https://github.com/Liuyl89/fantasy-skeleton-react', role: 'button' },
+                '\u524D\u5F80Github'
+            )
+        )
+    );
+};
+var Sub = function Sub() {
+    return _react2.default.createElement(
+        'div',
+        { className: 'jumbotron' },
+        _react2.default.createElement(
+            'h1',
+            null,
+            '\u9AA8\u67B6\u96C6\u6210\u4E86React Router'
+        ),
+        _react2.default.createElement(
+            'p',
+            null,
+            '\u8FD9\u662FRouter\u7684\u4E00\u4E2A\u7B80\u5355\u7684\u793A\u4F8B\uFF0C\u4F7F\u7528\u7684\u662Freact-router 4.1.2\u7248\u672C\uFF0C\u67E5\u770B\u6587\u6863\u53CA\u6559\u7A0B\u65F6\u8BF7\u6CE8\u610F\u5176\u7248\u672C\u95F4\u7684\u5DE8\u5927\u5DEE\u5F02~'
+        ),
+        _react2.default.createElement(
+            'p',
+            null,
+            _react2.default.createElement(
+                'a',
+                { className: 'btn btn-primary btn-lg', target: '_blank',
+                    href: 'https://github.com/Liuyl89/fantasy-skeleton-react', role: 'button' },
+                '\u524D\u5F80Github'
+            )
+        )
+    );
+};
+
+var ListItemLink = function ListItemLink(_ref) {
+    var label = _ref.label,
+        to = _ref.to,
+        activeOnlyWhenExact = _ref.activeOnlyWhenExact;
+    return _react2.default.createElement(_reactRouterDom.Route, { path: to, exact: activeOnlyWhenExact, children: function children(_ref2) {
+            var match = _ref2.match;
+            return _react2.default.createElement(
+                'li',
+                { role: 'presentation', className: match ? 'active' : '' },
+                _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: to },
+                    label
+                )
+            );
+        } });
+};
+
+var App = function (_React$Component) {
+    _inherits(App, _React$Component);
+
+    function App() {
+        _classCallCheck(this, App);
+
+        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    }
+
+    _createClass(App, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                _reactRouterDom.BrowserRouter,
+                { basename: '/fantasy-skeleton-react' },
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                        'ul',
+                        { className: 'nav nav-tabs' },
+                        _react2.default.createElement(ListItemLink, { to: '/', label: 'Home', activeOnlyWhenExact: 'true' }),
+                        _react2.default.createElement(ListItemLink, { to: '/sub', label: 'Sub', activeOnlyWhenExact: 'true' })
+                    ),
+                    _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: Home }),
+                    _react2.default.createElement(_reactRouterDom.Route, { path: '/sub', component: Sub })
+                )
+            );
+        }
+    }]);
+
+    return App;
+}(_react2.default.Component);
+
+exports.default = App;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports = ReactRouterDOM;
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(8);
+var content = __webpack_require__(11);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -115,14 +276,14 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(10)(content, options);
+var update = __webpack_require__(13)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./App.scss", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./App.scss");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./app.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./app.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -132,21 +293,21 @@ if(false) {
 }
 
 /***/ }),
-/* 8 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)(undefined);
+exports = module.exports = __webpack_require__(12)(undefined);
 // imports
 
 
 // module
-exports.push([module.i, ".app {\n  margin-top: 63px; }\n", ""]);
+exports.push([module.i, ".app {\n  margin-top: 63px; }\n  .app .jumbotron {\n    margin-top: 10px; }\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 9 */
+/* 12 */
 /***/ (function(module, exports) {
 
 /*
@@ -228,7 +389,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 10 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -274,7 +435,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(11);
+var	fixUrls = __webpack_require__(14);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -587,7 +748,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 11 */
+/* 14 */
 /***/ (function(module, exports) {
 
 
