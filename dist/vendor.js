@@ -60,30 +60,28 @@ define(function() { return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "/fantasy-skeleton-arcgis/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 95);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 95:
+/******/ ([
+/* 0 */,
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(96);
+module.exports = __webpack_require__(2);
 
 
 /***/ }),
-
-/***/ 96:
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(97);
+__webpack_require__(3);
 
 /***/ }),
-
-/***/ 97:
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -110,6 +108,5 @@ __webpack_require__(97);
 // Place any jQuery/helper plugins in here.
 
 /***/ })
-
-/******/ })});;
+/******/ ])});;
 //# sourceMappingURL=vendor.js.map

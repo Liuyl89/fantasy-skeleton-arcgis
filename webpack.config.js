@@ -141,6 +141,10 @@ module.exports = {
         {
             'jquery': 'jQuery',
             'lodash': '_',
+            'react': 'React',
+            'react-dom': 'ReactDOM',
+            'react-router-dom': 'ReactRouterDOM',
+            'prop-types':'PropTypes',
         },
         function (context, request, callback) {
             if (/^dojo/.test(request) ||
