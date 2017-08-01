@@ -100,6 +100,7 @@ module.exports = {
                 path: 'bootstrap/',
                 version: '3.3.7'
             }, {
+                //arcgis js api应该最后引用，否则可能导致multiple define错误
                 file: 'init.js',
                 path: 'https://js.arcgis.com/4.4/',
                 version: '4.4',
