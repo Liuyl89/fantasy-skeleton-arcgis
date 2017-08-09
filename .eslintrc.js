@@ -5,67 +5,23 @@ module.exports = {
         "node": true,
         "jquery": true,
     },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "experimentalObjectRestSpread": true,
-            "jsx": true
-        },
-        "sourceType": "module"
+    "globals": {
+        "_": true,
+        "$": true,
     },
-    "plugins": [
-        "react"
-    ],
+    "parser": "babel-eslint",
     "rules": {
-        "indent": [
-            "error",
-            4
-        ],
-        "linebreak-style": [
-            "error",
-            "windows"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "never"
-        ],
-        "no-undef": [
-            "off"
-        ],
-        "react/display-name": [1, {"ignoreTranspilerName": false}],
-        "react/forbid-prop-types": [1, {"forbid": ["any"]}],
-        "react/jsx-boolean-value": 1,
-        "react/jsx-closing-bracket-location": 0,
-        "react/jsx-curly-spacing": 1,
-        "react/jsx-indent-props": 0,
-        "react/jsx-key": 1,
-        "react/jsx-max-props-per-line": 0,
-        "react/jsx-no-bind": 0,
-        "react/jsx-no-duplicate-props": 1,
-        "react/jsx-no-literals": 0,
-        "react/jsx-no-undef": 0,
-        "react/jsx-pascal-case": 1,
-        "react/jsx-sort-prop-types": 0,
-        "react/jsx-sort-props": 0,
-        "react/jsx-uses-react": 1,
-        "react/jsx-uses-vars": 1,
-        "react/no-danger": 1,
-        "react/no-did-mount-set-state": 1,
-        "react/no-did-update-set-state": 1,
-        "react/no-direct-mutation-state": 1,
-        "react/no-multi-comp": 0,
-        "react/no-set-state": 0,
-        "react/no-unknown-property": 1,
-        "react/prefer-es6-class": 1,
+        "indent": ["error", 4],
+        "linebreak-style": ["error", "windows"],
+        "semi": ["error", "never"],
+        "class-methods-use-this": [0],
+        "import/extensions": 0,
+        "import/no-unresolved": 0,
+        "import/no-extraneous-dependencies": 0,
+        "import/prefer-default-export": 0,
         "react/prop-types": 0,
-        "react/react-in-jsx-scope": 1,
-        "react/require-extension": 0,
-        "react/self-closing-comp": 1,
-        "react/sort-comp": 1,
-        "react/wrap-multilines": 0
-    }
+        "arrow-body-style": 0,
+        "one-var": 0,
+    },
+    "extends": ["airbnb-base", 'plugin:react/recommended']
 };

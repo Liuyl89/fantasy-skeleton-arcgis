@@ -156,6 +156,6 @@ module.exports = {
                 return callback(null, 'amd ' + request)
             }
             callback()
-        }]
-
+        },
+    ]
 }
