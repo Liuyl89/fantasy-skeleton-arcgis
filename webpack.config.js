@@ -131,7 +131,9 @@ module.exports = {
             // 在index.html中define以下名称，使其在AMD中能够被正确引用
             // 这将在编译index.html文件是生成一些额外代码
             // 列表中的名称应该是要引用的库的全局变量名称
-            dojoDefines: ['jQuery', 'lodash', 'React', 'ReactDOM', 'ReactRouterDOM', 'PropTypes'],
+            dojoDefines: [
+                'jQuery', 'lodash', 'React', 'ReactDOM', 'ReactRouterDOM', 'PropTypes',
+            ],
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',

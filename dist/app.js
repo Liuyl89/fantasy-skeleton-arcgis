@@ -104,7 +104,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var $mountNode = $('<div class="container app"></div>').appendTo(document.body);
 var render = function render(NewApp) {
-  return _reactDom2.default.render(_react2.default.createElement(NewApp, null), $mountNode[0]);
+    _reactDom2.default.render(_react2.default.createElement(NewApp, null), $mountNode[0]);
 };
 render(_app2.default);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
@@ -212,14 +212,14 @@ var Home = function Home() {
         _react2.default.createElement(
             'p',
             null,
-            'fantasy-skeleton-arcgis \u662F\u4E00\u4E2A\u5F00\u53D1\u9AA8\u67B6\uFF0C\u96C6\u6210\u4E86Arcgis JavaScript API\u3001webpack\u3001bootstrap\u548CReact\uFF0C\u795D\u4F60\u597D\u8FD0~'
+            'fantasy-skeleton-arcgis \u662F\u4E00\u4E2A\u5F00\u53D1\u9AA8\u67B6\uFF0C \u96C6\u6210\u4E86Arcgis JavaScript API\u3001webpack\u3001bootstrap\u548CReact\uFF0C\u795D\u4F60\u597D\u8FD0~'
         ),
         _react2.default.createElement(
             'p',
             null,
             _react2.default.createElement(
                 'a',
-                { className: 'btn btn-primary btn-lg', target: '_blank',
+                { className: 'btn btn-primary btn-lg', target: '_blank', rel: 'noopener noreferrer',
                     href: 'https://github.com/Liuyl89/fantasy-skeleton-arcgis', role: 'button' },
                 '\u524D\u5F80Github'
             )
@@ -231,7 +231,10 @@ var ListItemLink = function ListItemLink(_ref) {
     var label = _ref.label,
         to = _ref.to,
         activeOnlyWhenExact = _ref.activeOnlyWhenExact;
-    return _react2.default.createElement(_reactRouterDom.Route, { path: to, exact: activeOnlyWhenExact == 'true' ? true : false, children: function children(_ref2) {
+    return _react2.default.createElement(
+        _reactRouterDom.Route,
+        { path: to, exact: activeOnlyWhenExact },
+        function (_ref2) {
             var match = _ref2.match;
             return _react2.default.createElement(
                 'li',
@@ -242,7 +245,8 @@ var ListItemLink = function ListItemLink(_ref) {
                     label
                 )
             );
-        } });
+        }
+    );
 };
 
 var App = function (_React$Component2) {
