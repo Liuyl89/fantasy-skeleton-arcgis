@@ -1,7 +1,7 @@
 // Avoid `console` errors in browsers that lack a console.
-(function () {
+const inject = () => {
     let method
-    const noop = function () {
+    const noop = () => {
     }
     const methods = [
         'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
@@ -22,6 +22,7 @@
         }
         length -= 1
     }
-}())
+}
+inject()
 
 // Place any jQuery/helper plugins in here.
