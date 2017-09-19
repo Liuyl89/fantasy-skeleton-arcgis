@@ -7,7 +7,26 @@ const path = require('path'),
     WebpackDevServer = require('webpack-dev-server'),
     staticServer = require('node-static'),
     http = require('http'),
+    eslint = require('gulp-eslint'),
+    gulpIf = require('gulp-if'),
     name = ':fantasy-skeleton-arcgis'
+
+const isFixed = (file) => {
+    return file.eslint != null && file.eslint.fixed
+}
+gulp.task(`eslint${name}`, () => {
+    return gulp.src(['./src/**/*.js', './src/**/*.jsx', '!./src/assets/**'])
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError())
+})
+gulp.task(`eslint-fix${name}`, () => {
+    return gulp.src(['./src/**/*.js', './src/**/*.jsx', '!./src/assets/**'])
+        .pipe(eslint({ fix: true }))
+        .pipe(eslint.format())
+        .pipe(gulpIf(isFixed, gulp.dest('./src/')))
+        .pipe(eslint.failAfterError())
+})
 
 gulp.task(`clean${name}`, (cb) => {
     del.sync('./dist/**/*', { force: true })
@@ -25,6 +44,8 @@ gulp.task(`copy${name}`, (cb) => {
         .pipe(gulp.dest('./dist/assets'))
     gulp.src('./src/assets/img/icon.png')
         .pipe(gulp.dest('./dist/assets'))
+    gulp.src('./src/assets/js/**/*')
+        .pipe(gulp.dest('./dist/assets/js'))
     cb()
 })
 
