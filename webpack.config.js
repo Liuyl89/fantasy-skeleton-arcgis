@@ -1,12 +1,16 @@
 const path = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     webpack = require('webpack')
+
 module.exports = {
     entry: {
         vendor: ['./src/vendor.js', 'lodash', 'jquery', 'bootstrap',
             'prop-types', 'react', 'react-dom', 'react-router-dom'],
         app: ['./src/index.jsx'],
 
+    },
+    resolve: {
+        extensions: ['.js', '.jsx'],
     },
     output: {
         filename: '[name].[chunkhash].js',
@@ -23,41 +27,41 @@ module.exports = {
                 presets: [
                     'es2015',
                     'react',
-                    'stage-1'
+                    'stage-1',
                 ],
                 plugins: [
-                    'lodash'
-                ]
-            }
+                    'lodash',
+                ],
+            },
         }, {
             test: /\.css$/,
-            loader: 'style-loader!css-loader'
+            loader: 'style-loader!css-loader',
         }, {
             test: /\.scss$/,
             exclude: /node_modules/,
             loader: 'style-loader!css-loader!sass-loader',
         }, {
             test: /\.(png|gif)$/,
-            loader: 'url-loader?limit=100000'
+            loader: 'url-loader?limit=100000',
         }, {
             test: /\.jpg$/,
-            loader: 'file-loader'
+            loader: 'file-loader',
         }, {
             test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-            loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+            loader: 'url-loader?limit=10000&mimetype=application/font-woff',
         }, {
             test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-            loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
+            loader: 'url-loader?limit=10000&mimetype=application/octet-stream',
         }, {
             test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-            loader: 'file-loader'
+            loader: 'file-loader',
         }, {
             test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-            loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+            loader: 'url-loader?limit=10000&mimetype=image/svg+xml',
         }, {
             test: /\.json$/,
-            loader: 'json-loader'
-        }]
+            loader: 'json-loader',
+        }],
     },
     plugins: [
         new HtmlWebpackPlugin({
